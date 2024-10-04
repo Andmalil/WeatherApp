@@ -1,0 +1,12 @@
+FROM python:3.12
+WORKDIR /WeatherApp
+
+# Set environment variables
+ENV MAPKEY '4PbhM2PS7vW94DS6gCOb'
+ENV WEATHERAPIKEY '3b63195cbc744f2f843152516242009'
+
+# Install the application dependencies
+COPY requirements.txt /WeatherApp/
+RUN pip install -r requirements.txt
+
+COPY . /WeatherApp/

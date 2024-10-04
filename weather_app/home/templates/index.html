@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Weather</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script type="text/javascript" src="https://unpkg.com/external-svg-loader@latest/svg-loader.min.js" async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="{% static 'home/scripts/index.js' %}"></script> 
+    <link href="{% static 'home/stylesheets/index.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="search-panel">
+        <button class="magnifier-button">
+          <svg class="magnifier-icon" data-src="static/home/icons/search.svg"></svg>
+        </button>
+        <input type="text" placeholder="Search" class="search" />
+        <button class="search-cross">
+          <svg class="cross-icon light-cross" data-src="static/home/icons/x-circle.svg"></svg>
+          <svg class="cross-icon dark-cross" data-src="static/home/icons/x-circle-fill.svg"></svg>
+        </button>
+        
+    </div>
+    <div class="search-hints">
+      <div class="hint-line" width="0"></div>
+      <div class="hint-content">
+        <ul class="hint-content-items">
+        {% for i in range %}
+        <li style="margin-left: 20px;">{{ i }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+    </header>
+
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <ul class="sidebar-nav-items">
+          <li class="sidebar-nav-item"><button class="sidebar-button"><h4>analysis</h4></button></li>
+          <li class="sidebar-nav-item"><button class="sidebar-button"><h4>prediction</h4></button></li>
+          <li class="sidebar-nav-item"><button class="sidebar-button"><h4>map</h4></button></li>
+        </ul>
+    </nav>
+    </aside>
+
+      <main class="content">
+        {% for i in range %}
+        <p style="margin-left: 20px;">{{ i }}</p>
+        {% endfor %}
+  </main>
+  </body>
+</html>
